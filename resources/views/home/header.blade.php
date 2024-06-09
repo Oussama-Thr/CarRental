@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">Car <span>Rental</span></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
 
@@ -17,24 +16,23 @@
                 <!-- Navbar Search Box -->
                 {{-- <div class="">
                     <form action="{{url('product_search')}}" method="GET">
-                        @csrf
+                @csrf
                         <input type="text" name="search" placeholder="Search for Cars" class="">
                         <input type="submit" value="search" class="btn btn-outline-primary">
                     </form>
                 </div> --}}
 
 
-                <li class="nav-item"><a href="{{ url('/userlogout') }}" class="btn btn-danger mt-2 btn-sm ">Logout</a>
+                <li class="nav-item">
+                    <a href="{{ url('/userlogout') }}" class="btn btn-danger mt-2 btn-sm ">Logout</a>
                 </li>
                 <li class="nav-item dropdown ml-4 border-left">
-                    <a class="nav-link count-indicator dropdown-toggle" id="accountOptionsDropdown" href="#"
-                        data-toggle="dropdown">
+                    <a class="nav-link count-indicator dropdown-toggle" id="accountOptionsDropdown" href="#" data-toggle="dropdown">
                         <!-- Change the icon here (e.g., to a key icon) -->
                         <i class="mdi mdi-key"></i>
                         <span class="count bg-danger"></span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                        aria-labelledby="accountOptionsDropdown">
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="accountOptionsDropdown">
                         <h6 class="p-3 mb-0">Other Account options</h6>
                         <div class="dropdown-divider"></div>
                         <!-- Add options for user login, user sign up, vendor login, and vendor signup -->
@@ -82,9 +80,9 @@
                                 <p class="text-muted ellipsis mb-0"> New vendor? Sign up here </p>
                             </div>
                         </a>
+                    </div>
                 </li>
             </ul>
         </div>
-
-
+    </div>
 </nav>

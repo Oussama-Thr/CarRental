@@ -42,7 +42,7 @@
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
                 <div class="col-md-9 ftco-animate pb-5">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i class="ion-ios-arrow-forward"></i></span></p>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{url('/')}}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span><a href="{{url('/all_cars')}}">Cars <i class="ion-ios-arrow-forward"></i></a></span></p>
                     <h1 class="mb-3 bread">Choose Your Car</h1>
                 </div>
             </div>
@@ -85,18 +85,18 @@
                             <h2 class="mb-0"><a href="{{ url('product_details', $product->product_id) }}">{{ $product->product_title }}</a></h2>
                             <div class="d-flex mb-3">
                                 <span class="cat">{{ $product->category ? $product->category->category_name : 'No Category' }}</span>
-                                <p class="price ml-auto">BDT {{ $product->price }} <span>/day</span></p>
+                                <p class="price ml-auto">Dh {{ $product->price }} <span>/day</span></p>
                             </div>
                             <form action="{{ url('add_cart', $product->product_id) }}" method='POST'>
                                 @csrf
                                 <p>Please Choose total days</p>
                                 <div class='row'>
-                                    <input type="number" name='days' value="{{ $product->days }}" min="{{ $product->days }}" required>
-                                    <input type="submit" value='Book now'>
+                                    <input type="number" name='days' value="{{ $product->days }}" min="{{ $product->days }}" required> &nbsp;
+                                    <button type="submit" class="btn btn-primary">Book now</button>
                                 </div>
                             </form>
-                            <p class="d-flex mb-0 d-block">
-                                <a href="{{ url('product_details', $product->product_id) }}" class="btn btn-secondary py-2 ml-1">Details</a>
+                            <p class="d-flex mt-2 mb-0 d-flex justify-content-center">
+                                <a href="{{ url('product_details', $product->product_id) }}" class="btn btn-secondary py-2 ml-1">&nbsp;&nbsp; Details &nbsp;&nbsp;</a>
                             </p>
                         </div>
                     </div>

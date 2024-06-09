@@ -5,8 +5,7 @@
     <title>CarRental</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <base href="/public">
     <link rel="stylesheet" href="home/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="home/css/animate.css">
@@ -30,9 +29,7 @@
     @include('home.header2')
     @endif
     <!-- END nav -->
-    <section class="hero-wrap hero-wrap-2 js-fullheight"
-        style="background-image: url('added_products/{{$product->image}}'); background-size: cover; height: 150px;"
-        data-stellar-background-ratio="0.15">
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('added_products/{{$product->image}}'); background-size: cover; height: 150px;" data-stellar-background-ratio="0.15">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -59,8 +56,7 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><span
-                                        class="flaticon-car"></span></div>
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-car"></span></div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         Driver
@@ -75,8 +71,7 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><span
-                                        class="flaticon-pistons"></span></div>
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-pistons"></span></div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         Transmission
@@ -91,8 +86,7 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><span
-                                        class="flaticon-car-seat"></span></div>
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-car-seat"></span></div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         Seats
@@ -107,8 +101,7 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><span
-                                        class="flaticon-backpack"></span></div>
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-backpack"></span></div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         Luggage
@@ -128,35 +121,34 @@
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="pills-description-tab" data-toggle="pill"
-                                        href="#pills-description" role="tab" aria-controls="pills-description"
-                                        aria-expanded="true">Features</a>
+                                    <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill"
-                                        href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer"
-                                        aria-expanded="true">Description</a>
+                                    <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
                                 </li>
 
                             </ul>
                         </div>
 
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
-                                aria-labelledby="pills-description-tab">
+                            <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
 
                                 <!-- contents here -->
                                 <style>
-                                .centered-list {
-                                    text-align: center;
-                                    list-style-type: none;
-                                    padding: 0;
-                                }
+                                    .centered-list {
+                                        text-align: center;
+                                        list-style-type: none;
+                                        padding: 0;
+                                    }
 
-                                .centered-list li {
-                                    margin: 10px 0;
-                                    font-size: 18px;
-                                }
+                                    .centered-list li {
+                                        margin: 10px 0;
+                                        font-size: 18px;
+                                    }
+
+                                    .green-text {
+                                        color: green;
+                                    }
                                 </style>
 
                                 <div class="text-center">
@@ -164,26 +156,18 @@
                                         <li>- Vendor: {{$product->vendor_name}}</li>
                                         <li>- Lisence: {{$product->product_lisence}}</li>
                                         <li>- Minimum rent time: {{$product->days}} days</li>
-                                        <style>
-                                        .green-text {
-                                            color: green;
-                                        }
-                                        </style>
-                                        <li class="green-text">- Original price: <del>{{$product->price}}</del> BDT</li>
-                                        <li class="green-text">- Discounted price: {{$product->discounted_price}} BDT
+                                        <li class="green-text">- Original price: <del>{{$product->price}}</del> Dh</li>
+                                        <li class="green-text">- Discounted price: {{$product->discounted_price}} Dh
                                         </li>
-                                        <a href="{{url('product_details', $product->product_id)}}"
-                                            class="btn btn-secondary py-2 ml-1">Book Now</a>
+                                        <a href="{{url('product_details', $product->product_id)}}" class="btn btn-secondary py-2 ml-1">Book Now</a>
                                     </ul>
                                 </div>
                             </div>
 
-                            <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
-                                aria-labelledby="pills-manufacturer-tab">
+                            <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
 
                                 <p>{{$product->product_description}}</p>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -191,19 +175,15 @@
         </div>
     </section>
 
-
-
     @include('home.footer')
 
-
-
     <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#F96D00" />
-        </svg></div>
-
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg>
+    </div>
 
     <script src="home/js/jquery.min.js"></script>
     <script src="home/js/jquery-migrate-3.0.1.min.js"></script>
@@ -219,8 +199,7 @@
     <script src="home/js/bootstrap-datepicker.js"></script>
     <script src="home/js/jquery.timepicker.min.js"></script>
     <script src="home/js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="home/js/google-map.js"></script>
     <script src="home/js/main.js"></script>
 </body>

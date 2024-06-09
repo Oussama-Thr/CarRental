@@ -5,8 +5,7 @@
     <title>CarRental</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <base href="/public">
     <link rel="stylesheet" href="home/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="home/css/animate.css">
@@ -86,21 +85,17 @@
             text-decoration: none;
         }
     </style>
-
-
 </head>
 
 <body>
     <!-- start nav -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="{{url('/')}}">CarRental</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
-
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="{{url('/')}}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
@@ -119,7 +114,6 @@
     <div class="alert alert-success">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
         {{session()->get('message')}}
-
     </div>
 
     @endif
@@ -131,17 +125,16 @@
         <a href="{{url('/userpage')}}" class="btn btn-return-home">Return to Home Page</a>
     </div>
 
-
-
     <!-- footer -->
     @include('home.footer')
 
     <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#F96D00" />
-        </svg></div>
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg>
+    </div>
 
     <script src="home/js/jquery.min.js"></script>
     <script src="home/js/jquery-migrate-3.0.1.min.js"></script>
@@ -157,8 +150,7 @@
     <script src="home/js/bootstrap-datepicker.js"></script>
     <script src="home/js/jquery.timepicker.min.js"></script>
     <script src="home/js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="home/js/google-map.js"></script>
     <script src="home/js/main.js"></script>
 </body>
@@ -184,47 +176,44 @@ $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
 if($code == 200 && !( curl_errno($handle)))
 {
 
-	# TO CONVERT AS ARRAY
-	# $result = json_decode($result, true);
-	# $status = $result['status'];
+# TO CONVERT AS ARRAY
+# $result = json_decode($result, true);
+# $status = $result['status'];
 
-	# TO CONVERT AS OBJECT
-	$result = json_decode($result);
+# TO CONVERT AS OBJECT
+$result = json_decode($result);
 
-	# TRANSACTION INFO
-	$status = $result->status;
-	$tran_date = $result->tran_date;
-	$tran_id = $result->tran_id;
-	$val_id = $result->val_id;
-	$amount = $result->amount;
-	$store_amount = $result->store_amount;
-	$bank_tran_id = $result->bank_tran_id;
-	$card_type = $result->card_type;
+# TRANSACTION INFO
+$status = $result->status;
+$tran_date = $result->tran_date;
+$tran_id = $result->tran_id;
+$val_id = $result->val_id;
+$amount = $result->amount;
+$store_amount = $result->store_amount;
+$bank_tran_id = $result->bank_tran_id;
+$card_type = $result->card_type;
 
-	# EMI INFO
-	$emi_instalment = $result->emi_instalment;
-	$emi_amount = $result->emi_amount;
-	$emi_description = $result->emi_description;
-	$emi_issuer = $result->emi_issuer;
+# EMI INFO
+$emi_instalment = $result->emi_instalment;
+$emi_amount = $result->emi_amount;
+$emi_description = $result->emi_description;
+$emi_issuer = $result->emi_issuer;
 
-	# ISSUER INFO
-	$card_no = $result->card_no;
-	$card_issuer = $result->card_issuer;
-	$card_brand = $result->card_brand;
-	$card_issuer_country = $result->card_issuer_country;
-	$card_issuer_country_code = $result->card_issuer_country_code;
+# ISSUER INFO
+$card_no = $result->card_no;
+$card_issuer = $result->card_issuer;
+$card_brand = $result->card_brand;
+$card_issuer_country = $result->card_issuer_country;
+$card_issuer_country_code = $result->card_issuer_country_code;
 
-	# API AUTHENTICATION
-	$APIConnect = $result->APIConnect;
-	$validated_on = $result->validated_on;
-	$gw_version = $result->gw_version;
-    
+# API AUTHENTICATION
+$APIConnect = $result->APIConnect;
+$validated_on = $result->validated_on;
+$gw_version = $result->gw_version;
 
-    
-    
 } else {
 
-	echo "Failed to connect with SSLCOMMERZ";
+echo "Failed to connect with SSLCOMMERZ";
 }
 
 @endphp

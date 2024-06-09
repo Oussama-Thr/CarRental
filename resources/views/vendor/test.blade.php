@@ -2,9 +2,11 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Product Data</title>
 </head>
+
 <body>
     <h1>Product Data</h1>
     <table>
@@ -17,13 +19,14 @@
         </thead>
         <tbody>
             @foreach ($product_data as $product)
-                <tr>
-                    <td>{{ $product->product_id }}</td>
-                    <td>{{ $product->product_title }}</td>
-                    <!-- Add more table cells for other attributes -->
-                </tr>
+            <tr>
+                <td>{{ $product->product_id }}</td>
+                <td>{{ $product->product_title }}</td>
+                <!-- Add more table cells for other attributes -->
+            </tr>
             @endforeach
         </tbody>
     </table>
 </body>
+
 </html>

@@ -35,8 +35,6 @@
                     <table class="table table-bordered mt-5">
                         <thead class="bg-secondary text-light text-center">
                             <tr class="text-center">
-
-
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Phone</th>
@@ -44,15 +42,14 @@
                                 <th>Buisness Name</th>
                                 <th>Lisence</th>
                                 <th>Email</th>
-                                <th>Remove</th>
-
+                                <th>Action</th>
                             </tr>
+                        </thead>
 
                         <tbody style="background-color: #eaf4f4; color: #333;">
 
                             @foreach($vendor_data as $vendor_data)
                             <tr class='text-center'>
-
                                 <td>{{$vendor_data->id}}</td>
                                 <td>{{$vendor_data->name}}</td>
                                 <td>{{$vendor_data->phone}}</td>
@@ -60,25 +57,16 @@
                                 <td>{{$vendor_data->buisness_name}}</td>
                                 <td>{{$vendor_data->buisness_lisence_no}}</td>
                                 <td>{{$vendor_data->email}}</td>
-
-                                <td><a onclick="return confirm('Confirm Delete?')" class="btn btn-danger"
-                                        href="{{url('delete_f_vendor',$vendor_data->id)}}">Delete</a></td>
+                                <td><a onclick="return confirm('Confirm Delete?')" class="btn btn-danger" href="{{url('delete_f_vendor',$vendor_data->id)}}">Delete</a></td>
                             </tr>
 
                             @endforeach
-
                         </tbody>
 
-                        </thead>
-
                     </table>
-
-
                 </div>
             </div>
         </div>
-
-
         <!-- container-scroller -->
         @include('adminpanel.script')
 </body>

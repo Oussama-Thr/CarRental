@@ -5,8 +5,7 @@
     <title>CarRental</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <base href="/public">
     <link rel="stylesheet" href="home/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="home/css/animate.css">
@@ -73,13 +72,11 @@
     <div class="hero_area">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <a class="navbar-brand" href="{{url('/')}}">CarRental</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
-
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="{{url('/userpage')}}" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
@@ -91,8 +88,6 @@
                 </ul>
             </div>
         </nav>
-
-
 
         <div class="center">
             <table>
@@ -107,8 +102,6 @@
                     <th class="th_deg">Return Date</th>
                     <th class="th_deg">Image</th>
                     <th class="th_deg">Cancel Order</th>
-
-
                 </tr>
 
                 @foreach($order as $order)
@@ -128,35 +121,30 @@
 
                     <td>{{ $newDate->format('Y-m-d') }}</td>
                     <td>
-                        <img height="100" width="120" src="{{ asset('added_products/' . $order->image) }}"
-                            alt="Product Image">
+                        <img height="100" width="120" src="{{ asset('added_products/' . $order->image) }}" alt="Product Image">
 
                     </td>
                     <td>
                         @if($order->delivery_status=='processing')
-                        <a onclick="return confirm('Are you sure to cancel this order?')" class="btn btn-danger"
-                            href="{{url('cancel_order',$order->id)}}">Cancel</a>
+                        <a onclick="return confirm('Are you sure to cancel this order?')" class="btn btn-danger" href="{{url('cancel_order',$order->id)}}">Cancel</a>
                         @else
                         <p style="color: blue;"> Not Allowed</p>
                         @endif
                     </td>
-
                 </tr>
                 @endif
                 @endforeach
-
             </table>
-
         </div>
         <!-- footer end -->
 
         <script>
-            document.addEventListener("DOMContentLoaded", function (event) {
+            document.addEventListener("DOMContentLoaded", function(event) {
                 var scrollpos = localStorage.getItem('scrollpos');
                 if (scrollpos) window.scrollTo(0, scrollpos);
             });
 
-            window.onbeforeunload = function (e) {
+            window.onbeforeunload = function(e) {
                 localStorage.setItem('scrollpos', window.scrollY);
             };
         </script>

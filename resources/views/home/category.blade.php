@@ -9,12 +9,11 @@
             @foreach($cat_data as $category)
             <div class="col-md-3">
                 <div class="services services-2 w-100 text-center">
-                    <a href="{{ url('/show_category', ['category_id' => $category->id])}}"
-                        class="icon d-flex align-items-center justify-content-center">
+                    <a href="{{ url('/show_category', ['category_id' => $category->id])}}" class="icon d-flex align-items-center justify-content-center">
                         <span class="flaticon-transportation"></span>
                     </a>
                     <div class="text w-100">
-                        <h2 class="heading mb-2">{{$category->catagory_name}}</h2>
+                        <h2 class="heading mb-5">{{$category->catagory_name}}</h2>
                     </div>
                 </div>
             </div>

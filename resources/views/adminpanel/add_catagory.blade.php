@@ -4,6 +4,11 @@
 <head>
     <!-- Required meta tags -->
     @include('adminpanel.css')
+    <style>
+        .table-dark th, .table-dark td {
+            color: white!important;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,21 +21,14 @@
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
-
                 @if(session()->has('message'))
-
                 <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                     {{session()->get('message')}}
-
                 </div>
-
                 @endif
-
                 <h2 class="text-center">Insert Catagories</h2>
-
                 <form action="{{url('add_catagory')}}" method="post" class="mb-2">
-
                     @csrf
                     <div class="input-group w-90 mb-2">
                         <span class="input-group-text bg-info" id="basic-addon1"><i class="fa-solid fa-receipt"></i></span>
@@ -42,33 +40,33 @@
                 </form>
                 <!-- TABLE-->
                 <h1 class="text-center text-white">CarRental Categories</h1>
-                <table class="table table-bordered mt-5">
-                    <thead class="bg-secondary text-light text-center">
+                <table class="table table-dark table-striped table-bordered mt-5">
+                    <thead class="text-center">
                         <tr class="text-center">
                             <th>Category ID</th>
                             <th>Category Name</th>
                             <th>Actions</th>
                         </tr>
-
-                    <tbody style="background-color: #eaf4f4; color: #333;">
-
+                    </thead>
+                    <tbody>
                         @foreach ($data as $data)
                         <tr class='text-center'>
 
                             <td>{{$data->id}}</td>
                             <td>{{$data->catagory_name}}</td>
-                            <td><a href="{{ route('edit_catagory', ['id' => $data->id]) }}" class='btn btn-warning'>&nbsp;&nbsp;Edit&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;
-                            <a onclick="return confirm('Confirm Delete?')" class="btn btn-danger" href="{{url('delete_catagory',$data->id)}}">Delete</a></td>
+                            <td>
+                                <a href="{{ route('edit_catagory', ['id' => $data->id]) }}" class='btn btn-warning'>&nbsp;&nbsp;Edit&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;
+                                <a onclick="return confirm('Confirm Delete?')" class="btn btn-danger" href="{{url('delete_catagory',$data->id)}}">Delete</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
-                    </thead>
                 </table>
             </div>
         </div>
-
         <!-- container-scroller -->
         @include('adminpanel.script')
+    </div>
 </body>
 
 </html>

@@ -5,8 +5,7 @@
     <title>CarRental</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <base href="/public">
     <link rel="stylesheet" href="home/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="home/css/animate.css">
@@ -30,13 +29,11 @@
     @endif
     <!-- END nav -->
 
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('home/images/background.png');"
-        data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('home/images/background.png');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
                 <div class="col-md-9 ftco-animate pb-5">
-
                     <h1 class="mb-3 bread">Available cars from </h1>
                     <h1 class="navbar-brand">
                         <span>{{$catagory->catagory_name}}</a></span> catagory
@@ -71,8 +68,7 @@
                                 @foreach($cars as $car)
                                 <tr class="">
                                     <td class="car-image">
-                                        <div class="img"
-                                            style="background-image:url('added_products/{{$car->image}}');"></div>
+                                        <div class="img" style="background-image:url('added_products/{{$car->image}}');"></div>
                                     </td>
                                     <td class="product-name">
                                         <h3>{{$car->product_title}}</h3>
@@ -112,13 +108,10 @@
                                     </td>
 
                                     <td class="price">
-                                        <a href="{{url('product_details', $car->product_id)}}"
-                                            class="btn btn-success">Details</a>
+                                        <a href="{{url('product_details', $car->product_id)}}" class="btn btn-success">Details</a>
                                     </td>
-
                                 </tr><!-- END TR-->
                                 @endforeach
-
                             </tbody>
                         </table>
                         @endif
@@ -128,18 +121,15 @@
         </div>
     </section>
 
-
     @include('home.footer')
 
-
-
     <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#F96D00" />
-        </svg></div>
-
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg>
+    </div>
 
     <script src="home/js/jquery.min.js"></script>
     <script src="home/js/jquery-migrate-3.0.1.min.js"></script>
@@ -155,8 +145,7 @@
     <script src="home/js/bootstrap-datepicker.js"></script>
     <script src="home/js/jquery.timepicker.min.js"></script>
     <script src="home/js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="home/js/google-map.js"></script>
     <script src="home/js/main.js"></script>
 

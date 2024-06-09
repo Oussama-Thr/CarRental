@@ -5,8 +5,7 @@
     <title>CarRental</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <base href="/public">
     <link rel="stylesheet" href="home/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="home/css/animate.css">
@@ -31,8 +30,7 @@
     @endif
     <!-- END nav -->
 
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('home/images/bac1.jpg');"
-        data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('home/images/bac1.jpg');" data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
                 <div class="col-md-9 ftco-animate pb-5">
@@ -41,7 +39,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="ftco-section ftco-car-details">
         <div class="container">
@@ -62,8 +59,7 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><span
-                                        class="flaticon-car"></span></div>
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-car"></span></div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         Driver
@@ -78,8 +74,7 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><span
-                                        class="flaticon-pistons"></span></div>
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-pistons"></span></div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         Transmission
@@ -94,8 +89,7 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><span
-                                        class="flaticon-car-seat"></span></div>
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-car-seat"></span></div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         Seats
@@ -110,8 +104,7 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><span
-                                        class="flaticon-backpack"></span></div>
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-backpack"></span></div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         Luggage
@@ -129,101 +122,89 @@
                     <div class="bd-example bd-example-tabs">
                         <div class="d-flex justify-content-center">
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="pills-description-tab" data-toggle="pill"
-                                        href="#pills-description" role="tab" aria-controls="pills-description"
-                                        aria-expanded="true">Features</a>
+                                    <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill"
-                                        href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer"
-                                        aria-expanded="true">Description</a>
+                                    <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
                                 </li>
-
                             </ul>
                         </div>
 
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
-                                aria-labelledby="pills-description-tab">
+                            <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
 
                                 <!-- contents here -->
                                 <style>
-                                .centered-list {
-                                    text-align: center;
-                                    list-style-type: none;
-                                    padding: 0;
-                                }
+                                    .centered-list {
+                                        text-align: center;
+                                        list-style-type: none;
+                                        padding: 0;
+                                        columns: 2;
+                                        /* Create two columns */
+                                        column-gap: 15px;
+                                        /* Gap between columns */
+                                    }
 
-                                .centered-list li {
-                                    margin: 10px 0;
-                                    font-size: 18px;
-                                }
+                                    .centered-list li {
+                                        margin: 10px 0;
+                                        font-size: 18px;
+                                        break-inside: avoid;
+                                        /* Prevents items from breaking across columns */
+                                    }
+
+                                    .green-text {
+                                        color: green;
+                                    }
+
+                                    .red-text {
+                                        color: red;
+                                    }
                                 </style>
 
                                 <div class="text-center">
-                                    <ul class="centered-list">
-                                        <li>- Vendor: {{$product->vendor_name}}</li>
-                                        <li>- Lisence: {{$product->product_lisence}}</li>
-                                        <li>- Minimum rent time: {{$product->days}} days</li>
-                                        <style>
-                                        .green-text {
-                                            color: green;
-                                        }
-
-                                        .red-text {
-                                            color: red;
-                                        }
-                                        </style>
-                                        <li class="red-text">- Original price: <del>{{$product->price}}</del> BDT</li>
-                                        <li class="green-text">- Discounted price: {{$product->discounted_price}} BDT
-                                        </li>
-                                        <p>Please Choose total days</p>
+                                    <ul style="list-style-type: none;">
+                                        <li style="width: 100%; text-align: center;">- Vendor: {{$product->vendor_name}}</li>
                                     </ul>
+                                    <ul class="centered-list">
+                                        <li>- Lisence: {{$product->product_lisence}}</li>
+                                        <li class="red-text">- Original price: <del>{{$product->price}}</del> Dh</li>
+                                        <li>- Minimum rent time: {{$product->days}} days</li>
+                                        <li class="green-text">- Discounted price: {{$product->discounted_price}} Dh</li>
+                                    </ul>
+                                    <p>Please Choose total days</p>
                                 </div>
                                 <form action="{{url('add_cart',$product->product_id)}}" method='Post'>
                                     @csrf
 
-                                    <div class="container d-flex align-items-center justify-content-center"
-                                        style="min-height: 10vh;">
+                                    <div class="container d-flex align-items-center justify-content-center" style="min-height: 10vh;">
                                         <div class='col-md-3'>
-                                            <input type="number" name='days' value="{{ $product->days }}"
-                                                min="{{ $product->days }}">
-                                            <button type="submit" class="btn btn-primary mt-2">Book now</button>
+                                            <input type="number" name='days' value="{{ $product->days }}" min="{{ $product->days }}">
                                         </div>
+                                        <button type="submit" class="btn btn-primary">Book now</button>
                                     </div>
                                 </form>
-
                             </div>
-
-                            <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
-                                aria-labelledby="pills-manufacturer-tab">
-
+                            <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
                                 <p>{{$product->product_description}}</p>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
     @include('home.footer')
 
-
-
     <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#F96D00" />
-        </svg></div>
-
-
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg>
+    </div>
     <script src="home/js/jquery.min.js"></script>
     <script src="home/js/jquery-migrate-3.0.1.min.js"></script>
     <script src="home/js/popper.min.js"></script>
@@ -238,8 +219,7 @@
     <script src="home/js/bootstrap-datepicker.js"></script>
     <script src="home/js/jquery.timepicker.min.js"></script>
     <script src="home/js/scrollax.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="home/js/google-map.js"></script>
     <script src="home/js/main.js"></script>
 </body>

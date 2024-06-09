@@ -21,7 +21,7 @@
                                 </h2>
                                 <div class="d-flex mb-3">
                                     <span class="cat">{{ $product->catagory->catagory_name ?? 'Uncategorized' }}</span>
-                                    <p class="price ml-auto">BDT {{ $product->price ?? 'N/A' }} <span>/day</span></p>
+                                    <p class="price ml-auto"> {{ $product->price ?? 'N/A' }} Dh <span>/day</span></p>
                                 </div>
                                 <p class="d-flex mb-0 d-block">
                                     <a href="{{ url('product_details', $product->product_id) }}" class="btn btn-secondary py-2 ml-1">Details</a>

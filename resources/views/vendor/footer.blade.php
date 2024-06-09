@@ -6,11 +6,9 @@
         width: 100%;
         background-color: #d1f2eb;
         color: #fff;
-        padding: 10px 0; /* Adjust the padding to make the footer 50% smaller */
+        padding: 10px 0;
         text-align: center;
     }
-    
-
     .footer-heading {
         color: black;
         font-size: 24px;
@@ -55,9 +53,9 @@
         <div class="footer-section__column">
             <h2 class="footer-section__title">Contact Us</h2>
             <p class="footer-section__content">
-                Phone: +8801930438736<br>
-                Email: wearwise@gmail.com<br>
-                Address: Brac University, Mohakhali, Dhaka, Bangladesh
+                Phone: +212 600-000000<br>
+                Email: CarRental@gmail.com<br>
+                Address: Private University of Marrakech, Marrakech, Morocco
             </p>
         </div>
     </div>

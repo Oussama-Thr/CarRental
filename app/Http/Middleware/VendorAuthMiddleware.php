@@ -19,8 +19,6 @@ class VendorAuthMiddleware
         if ($request->session()->has('vendor')) {
             return $next($request);
         }
-            
-
         return response()-> view('vendor.vendorlogin');
         //return redirect()->route('adminlogin')->with('message', 'Please login to access the admin dashboard.');
     }

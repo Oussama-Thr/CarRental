@@ -57,12 +57,17 @@
         </div>
         @endif
 
-        <div style="padding-left: 500px; padding-bottom: 50px;">
+
+        <div class="d-flex flex-column mb-3 align-items-center" style="padding-bottom: 50px;">
             <form action="{{ url('product_search') }}" method="GET">
                 @csrf
-                <label for="search">Search for Cars</label>
-                <input type="text" id="search" name="search" placeholder="Search for Cars" required>
-                <input type="submit" value="Search" class="btn btn-outline-primary">
+                <div class="form-group text-center">
+                    <label for="search" class="mb-2">Search for Cars</label>
+                    <div class="d-flex">
+                        <input class="form-control mr-2" style="width: auto;" type="text" id="search" name="search" placeholder="Search for Cars" required>
+                        <input type="submit" value="Search" class="btn btn-outline-primary">
+                    </div>
+                </div>
             </form>
         </div>
 

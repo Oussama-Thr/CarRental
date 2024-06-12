@@ -1,10 +1,11 @@
 <?php
+
 use App\Http\Controllers\admin_content_controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminSignupController;
 use App\Http\Controllers\admin_login_controller;
-use App\Http\Controllers\UserSignupController;
-use App\Http\Controllers\VendorSignupController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\VendorController;
 
 //Prokriti
 
@@ -40,7 +41,6 @@ route::get('/all_catagories', [HomeController::class, 'all_catagories']);
 
 route::get('/product_search', [HomeController::class, 'product_search']);
 
-//Shihab
 
 Route::get('/adminsignup', [AdminSignupController::class, 'index']);
 Route::post('/adminsignup', [AdminSignupController::class, 'admin_data_store']);
@@ -54,10 +54,7 @@ Route::get('/logout', function () {
         session()->pull('admin');
         return redirect('adminlogin');
     }
-
 });
-
-
 
 
 Route::middleware(['admin.auth'])->group(function () {
@@ -98,21 +95,19 @@ Route::middleware(['admin.auth'])->group(function () {
     Route::get('/approve_product/{id}', [admin_content_controller::class, 'approve_product']);
 
 
-
     Route::get('/Customer', [admin_content_controller::class, 'Customer']);
     Route::get('/delete_Customer/{cus_id}', [admin_content_controller::class, 'delete_Customer']);
 
     Route::get('/order', [admin_content_controller::class, 'order']);
     Route::get('/delete_orders/{product_id}', [admin_content_controller::class, 'delete_orders']);
-
 });
 
 
-Route::get('/usersignup', [UserSignupController::class, 'index']);
-Route::post('/usersignup', [UserSignupController::class, 'user_data_store']);
+Route::get('/usersignup', [UserController::class, 'index']);
+Route::post('/usersignup', [UserController::class, 'user_data_store']);
 
-Route::get('/userlogin', [UserSignupController::class, 'get_login']);
-Route::post('/userlogin', [UserSignupController::class, 'user_login']);
+Route::get('/userlogin', [UserController::class, 'get_login']);
+Route::post('/userlogin', [UserController::class, 'user_login']);
 
 
 
@@ -121,26 +116,23 @@ Route::get('/', [HomeController::class, 'index2']);
 Route::get("/product_details/{product_id}", [HomeController::class, "product_details"]);
 Route::get("/show_category/{catagory_id}", [HomeController::class, "catagory"]);
 
+Route::get('/success', function () {
+    return view('home.success');
+});
 
-Route::post("/success", [HomeController::class, 'success']);
+Route::get('/failure', function () {
+    return view('home.failure');
+});
+
 Route::middleware(['user.auth'])->group(function () {
 
     Route::get('/userpage', [HomeController::class, 'index']);
 
-route::get('/gateaway/{totalprice}',[HomeController::class,'payment']);
-
-
+    route::get('/gateaway/{totalprice}', [HomeController::class, 'payment']);
 
     Route::get('/test1', [admin_content_controller::class, 'view_test1']);
 
-
-
-
     Route::get("/book_product/{product_id}", [HomeController::class, 'book_product']);
-
-
-
-
 });
 
 
@@ -149,24 +141,20 @@ Route::get('/userlogout', function () {
         session()->pull('user');
         return redirect('userlogin');
     }
-
 });
 
 
 
+//m vendor 
+Route::get('/vendorsignup', [VendorController::class, 'index']);
+Route::post('/vendorsignup', [VendorController::class, 'vendor_data_store']);
 
-
-
-//m vendor Shihab
-Route::get('/vendorsignup', [VendorSignupController::class, 'index']);
-Route::post('/vendorsignup', [VendorSignupController::class, 'vendor_data_store']);
-
-Route::get('/vendorlogin', [VendorSignupController::class, 'get_login']);
-Route::post('/vendorlogin', [VendorSignupController::class, 'vendor_login']);
+Route::get('/vendorlogin', [VendorController::class, 'get_login']);
+Route::post('/vendorlogin', [VendorController::class, 'vendor_login']);
 
 Route::middleware(['vendor.auth'])->group(function () {
 
-    Route::get('/vendor_dashboard', [VendorSignupController::class, 'vendor_dashboard']);
+    Route::get('/vendor_dashboard', [VendorController::class, 'vendor_dashboard']);
 
     Route::view('welcome', 'welcome');
     Route::get('/v_view_product', [admin_content_controller::class, 'v_view_product']);
@@ -185,5 +173,4 @@ Route::get('/vendorlogout', function () {
         session()->pull('vendor');
         return redirect('vendorlogin');
     }
-
 });

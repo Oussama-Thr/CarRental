@@ -20,8 +20,6 @@ class AdminAuthMiddleware
         if ($request->session()->has('admin')) {
             return $next($request);
         }
-            
-
         return response()-> view('adminpanel.adminlogin');
         //return redirect()->route('adminlogin')->with('message', 'Please login to access the admin dashboard.');
     }

@@ -1,4 +1,4 @@
-
+<!-- 
 @php
 /* PHP */
 $post_data = array();
@@ -100,4 +100,59 @@ if(isset($sslcz['GatewayPageURL']) && $sslcz['GatewayPageURL']!="" ) {
 }
 
 @endphp
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <script src="https://js.stripe.com/v3/"></script>
+	<style></style>
+</head>
+<body>
+    <h1>Payment</h1>
+    <form id="payment-form">
+        <div id="card-element">
+            <!-- A Stripe Element will be inserted here. -->
+        </div>
+        <button type="submit" id="submit">Pay</button>
+        <div id="error-message"></div>
+    </form>
 
+    <script>
+        const stripe = Stripe('{{ env('STRIPE_KEY') }}');
+        const elements = stripe.elements();
+        const cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+
+        const form = document.getElementById('payment-form');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const { paymentIntent, error } = await stripe.confirmCardPayment('{{ $clientSecret }}', {
+                payment_method: {
+                    card: cardElement,
+                    billing_details: {
+                        name: 'Customer Name', // Add actual customer name
+                    },
+                },
+            });
+
+            if (error) {
+                // Show error message to the customer
+                document.getElementById('error-message').textContent = error.message;
+                alert('Payment failed. Your cart remains unchanged.');
+            } else {
+                if (paymentIntent.status === 'succeeded') {
+                    // Redirect to success URL or handle success response
+                    window.location.href = '/success';
+                } else {
+                    alert('Payment failed. Your cart remains unchanged.');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

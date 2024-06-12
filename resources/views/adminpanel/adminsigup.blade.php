@@ -9,6 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign Up</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <style>
+        body {
+            height: 100vh;
+            overflow: visible;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,14 +23,6 @@
     <!-- HTML bootstrap design -->
     <div class="container">
         <!-- Heading of page -->
-        <style>
-            body {
-                height: 100vh;
-                /* Set the body height to 100% viewport height */
-                overflow: visible;
-                /* Hide the body's default scrollbar */
-            }
-        </style>
         <div class="content-wrapper">
             @if(session()->has('message'))
             <div class="alert alert-info">
@@ -52,15 +50,13 @@
                     <div class="col-md-6 mb-3">
                         <label for="ref_code" class="form-label fw-bold">Reference Code</label>
                         <input type="text" maxlength="5" class="form-control" id="ref_code" name="ref_code" aria-describedby="ref_code_Help" required="required">
-                        <div id="ref_code_Help" maxlength="5" class="form-text">Enter reference code given by other
-                            admins</div>
+                        <div id="ref_code_Help" maxlength="5" class="form-text">Enter reference code given by other admins</div>
                     </div>
                     <!--Reference Generate box-->
                     <div class="col-md-6 mb-3">
                         <label for="ref_code_gen" class="form-label fw-bold">Your reference Code</label>
                         <input type="text" maxlength="5" class="form-control" id="ref_code_gen" name="ref_code_gen" aria-describedby="ref_code_Help" required="required">
-                        <div id="ref_code_Help" maxlength="5" class="form-text">Enter a reference code that you'd like
-                            to use for other new admin signups</div>
+                        <div id="ref_code_Help" maxlength="5" class="form-text">Enter a reference code that you'd like to use for other new admin signups</div>
                     </div>
                     <!--Email box-->
                     <div class="col-md-6 mb-3">

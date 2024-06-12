@@ -13,8 +13,9 @@ use App\Models\Order;
 use App\Models\final_vendors;
 use App\Models\Brands;
 
+use Stripe\Stripe;
+use Stripe\PaymentIntent;
 use Session;
-use Stripe;
 use PDF;
 use App\Models\Comment;
 use App\Models\Reply;
@@ -55,7 +56,6 @@ class HomeController extends Controller
     {
         $product = Products::with('brand')->find($product_id);
         return view('home.product_details', compact('product'));
-
     }
     public function product_search(Request $request)
     {
@@ -119,7 +119,6 @@ class HomeController extends Controller
                 $cart->day = $check;
             } else {
                 return view('home.showcart');
-
             }
 
             if ($product->discounted_price != null) {
@@ -153,20 +152,20 @@ class HomeController extends Controller
         return view('home.showcart', compact('cart'));
     }
     public function remove_cart($product_id)
-{
-    // Attempt to find the cart item by product ID
-    $cart = cart::find($product_id);
+    {
+        // Attempt to find the cart item by product ID
+        $cart = cart::find($product_id);
 
-    // Check if the cart item was found
-    if ($cart) {
-        // Cart item found, proceed with deletion
-        $cart->delete();
-        return redirect()->back()->with('message', 'Item removed from cart successfully.');
-    } else {
-        // Cart item not found, handle the error
-        return redirect()->back()->with('message', 'Item not found in cart.');
+        // Check if the cart item was found
+        if ($cart) {
+            // Cart item found, proceed with deletion
+            $cart->delete();
+            return redirect()->back()->with('message', 'Item removed from cart successfully.');
+        } else {
+            // Cart item not found, handle the error
+            return redirect()->back()->with('message', 'Item not found in cart.');
+        }
     }
-}
 
 
     public function profile()
@@ -207,7 +206,6 @@ class HomeController extends Controller
         $order->delivery_status = 'Your order have been canceled';
         $order->save();
         return redirect()->back();
-
     }
 
     public function cash_order()
@@ -237,55 +235,41 @@ class HomeController extends Controller
             $cart_id = $data->id;
             $cart = cart::find($cart_id);
             $cart->delete();
-
         }
 
         return redirect()->back()->with('message', 'We have Received your Order. We will connect with you soon.....');
     }
 
-
-
-    #payment gatewaya
-    public function payment($totalprice)
-
+    #Payment using Stripe
+    public function payment(Request $request, $totalprice)
     {
         $store = session('user'); // Assuming $store holds the username
         $data = cart::where('username', '=', $store)->get();
 
-        foreach ($data as $data) {
-            $order = new order;
-            $order->name = $data->name;
-            $order->email = $data->email;
-            $order->phone = $data->phone;
-            $order->address = $data->address;
-            $order->user_id = $data->user_id;
-            $order->username = $data->username;
-            $order->product_title = $data->product_title;
-            $order->price = $data->price;
-            $order->day = $data->day;
-            $order->image = $data->image;
-            $order->product_id = $data->product_id;
-            $order->vendor_name = $data->vendor_name;
+        // Set your Stripe secret key
+        Stripe::setApiKey(env('STRIPE_SECRET'));
 
-            $order->payment_status = 'cash on delivery';
-            $order->delivery_status = 'processing';
-            $order->save();
+        // Create a PaymentIntent
+        try {
+            $paymentIntent = PaymentIntent::create([
+                'amount' => $totalprice * 100,
+                'currency' => 'mad',
+                'metadata' => ['integration_check' => 'accept_a_payment'],
+            ]);
 
-            $cart_id = $data->id;
-            $cart = cart::find($cart_id);
-            $cart->delete();
+            $clientSecret = $paymentIntent->client_secret;
 
+            return view('home.payment', compact('totalprice', 'store', 'clientSecret'));
+        } catch (\Exception $e) {
+            // Handle the error appropriately
+            return back()->withErrors(['message' => 'Payment setup failed. Please try again.']);
         }
-
-
-        return view('home.payment',compact('totalprice','store'));
     }
 
     public function success()
     {
         $store = session('user'); // Assuming $store holds the username
         //dd($store);
-
         return view('home.paysuccess');
     }
 }

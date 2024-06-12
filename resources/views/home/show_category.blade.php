@@ -90,8 +90,7 @@
                                     <td class="price">
                                         <div class="price-rate">
                                             <h3>
-                                                <span class="num"><small class="currency">৳</small>
-                                                    {{$car->price}}</span>
+                                                <span class="num">{{$car->price}} Dh</span>
                                                 <span class="per">/per day</span>
                                             </h3>
                                         </div>
@@ -100,8 +99,7 @@
                                     <td class="price">
                                         <div class="price-rate">
                                             <h3>
-                                                <span class="num"><small class="currency">৳</small>
-                                                    {{$car->discounted_price}}</span>
+                                                <span class="num">{{$car->discounted_price}} Dh</span>
                                                 <span class="per">/per day</span>
                                             </h3>
                                         </div>

@@ -19,8 +19,6 @@ class UserAuthMiddleware
         if ($request->session()->has('user')) {
             return $next($request);
         }
-            
-
         return response()-> view('user.userlogin');
         //return redirect()->route('adminlogin')->with('message', 'Please login to access the admin dashboard.');
     }

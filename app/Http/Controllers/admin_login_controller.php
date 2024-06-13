@@ -33,14 +33,7 @@ class admin_login_controller extends Controller
             else{
                 
                 return redirect()->back()->with('message','Password did not match'); 
-    
             }
-
         }
-
-        
-
-        
-
     }
 }

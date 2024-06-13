@@ -54,22 +54,22 @@
     <style>
         body {
             padding-top: 100px;
-            /* Adjust this value based on your navbar height */
+            background-image: url('home/images/bg_2.jpg');
         }
 
-        /* Additional styling for better visibility of the fixed-top navbar */
-        nav.navbar.fixed-top {
+        /* nav.navbar.fixed-top {
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            /* Set a high z-index value */
-        }
+            
+        } */
     </style>
 </head>
 
 <body>
     @include('sweetalert::alert')
+    @include('home.header')
     <div class="hero_area">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <a class="navbar-brand" href="{{url('/')}}">CarRental</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -85,8 +85,7 @@
                     <li class="nav-item"><a href="{{url('/userlogout')}}" class="btn btn-danger">Logout</a></li>
                 </ul>
             </div>
-        </nav>
-
+        </nav> -->
         <div class="container mt-4">
             <div class="row">
                 <div class="card">

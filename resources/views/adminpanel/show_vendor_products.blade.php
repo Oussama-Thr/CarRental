@@ -56,7 +56,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody style="background-color: #eaf4f4; color: #333;">
+                        <tbody>
                             @foreach($product_data as $product_data)
                             <tr class='text-center'>
                                 <td>{{$product_data->product_id}}</td>

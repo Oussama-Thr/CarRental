@@ -54,7 +54,13 @@
     <style>
         body {
             padding-top: 100px;
+            /* background-image: url('home/images/bg_2.jpg'); */
+
             /* Adjust this value based on your navbar height */
+        }
+
+        #ftco-navbar a{
+            color: black;
         }
 
         /* Additional styling for better visibility of the fixed-top navbar */
@@ -67,8 +73,9 @@
 </head>
 
 <body>
+    @include('home.header')
     <!-- start nav -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="{{url('/')}}">CarRental</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -85,7 +92,7 @@
                 <li class="nav-item"><a href="{{url('/userlogout')}}" class="btn btn-danger">Logout</a></li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
 
     <!-- END nav -->
     @if(session()->has('message'))

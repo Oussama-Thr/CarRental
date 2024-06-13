@@ -57,11 +57,6 @@
             /* Adjust this value based on your navbar height */
         }
         /* Additional styling for better visibility of the fixed-top navbar */
-        nav.navbar.fixed-top {
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            /* Set a high z-index value */
-        }
     </style>
 
 </head>

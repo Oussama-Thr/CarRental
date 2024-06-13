@@ -9,7 +9,7 @@
         padding: 10px 0;
         text-align: center;
     }
-    
+
     .footer-heading {
         color: black;
         font-size: 24px;
@@ -41,23 +41,14 @@
 </style>
 
 <div class="footer">
-    <div class="footer-heading" colour="black">
-        CarRental
-    </div>
-    <div class="footer-section">
-        <div class="footer-section__column">
-            <h2 class="footer-section__title">About Us</h2>
-            <p class="footer-section__content">
-                CarRental is a platform where you can rent a car from or have your car for rent.
+    <footer>
+        <div class="footer-content" style="color:black">
+            <h3>Contact</h3>
+            <p>
+                N° Tél : +212 620-000000 <br />
+                contact@carrental.com<br />
             </p>
+            <p style="font-weight: bold;">Copyright &copy;2024 CarRental | Designed by <span> Info 3</span></p>
         </div>
-        <div class="footer-section__column">
-            <h2 class="footer-section__title">Contact Us</h2>
-            <p class="footer-section__content">
-                Phone: +212 600-000000<br>
-                Email: CarRental@gmail.com<br>
-                Private University of Marrakech, Marrakech, Morocco
-            </p>
-        </div>
-    </div>
+    </footer>
 </div>

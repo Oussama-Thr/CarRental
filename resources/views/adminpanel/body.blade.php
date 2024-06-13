@@ -83,7 +83,7 @@
             <div class="row">
               <div class="col-9">
                 <div class="d-flex align-items-center align-self-start">
-                  <h3 class="mb-0">{{ $totalPrice }} TK</h3>
+                  <h3 class="mb-0">{{ $totalPrice }} Dh</h3>
                 </div>
               </div>
 
@@ -136,7 +136,7 @@
             <div class="row">
               <div class="col-8 col-sm-12 col-xl-8 my-auto">
                 <div class="d-flex d-sm-block d-md-flex align-items-center">
-                  <h2 class="mb-0">{{$w_Price}} TK</h2>
+                  <h2 class="mb-0">{{$w_Price}} Dh</h2>
 
                 </div>
                 <h6 class="text-muted font-weight-normal">Original CarRental earning</h6>
@@ -161,7 +161,7 @@
             <div class="row">
               <div class="col-8 col-sm-12 col-xl-8 my-auto">
                 <div class="d-flex d-sm-block d-md-flex align-items-center">
-                  <h2 class="mb-0">{{$vp_sale}} TK</h2>
+                  <h2 class="mb-0">{{$vp_sale}} Dh</h2>
                 </div>
                 <h6 class="text-muted font-weight-normal"> Vendor partner sales</h6>
               </div>
@@ -186,7 +186,7 @@
             <div class="row">
               <div class="col-8 col-sm-12 col-xl-8 my-auto">
                 <div class="d-flex d-sm-block d-md-flex align-items-center">
-                  <h2 class="mb-0">{{$vp_sale3}} TK</h2>
+                  <h2 class="mb-0">{{$vp_sale3}} Dh</h2>
 
                 </div>
                 <h6 class="text-muted font-weight-normal">10%commision on each sale</h6>
@@ -255,14 +255,29 @@
 
   <!-- content-wrapper ends -->
   <!-- partial:partials/_footer.html -->
-  <footer class="footer">
-    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">WearWise <br> Wear all wear wise</span>
-      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Contact<br> Email: wearwise@gmail.com <br> Phone: +8801928363 <br>Address: Brac University, Dhaka, Bangldadesh </span>
-    </div>
-  </footer>
-  <!-- partial -->
-</div>
-<!-- main-panel ends -->
+  <style>
+    .footer {
+      /* position: fixed; */
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+    }
+  </style>
+  <div class="footer">
+    <footer>
+      <div class="footer-content">
+        <h3>Contact</h3>
+        <p>
+          N° Tél : +212 620-000000 <br />
+          contact@carrental.com<br />
+          Address: Private University of Marrakech, Marrakech, Morocco <br />
+        </p>
+        <p style="font-weight: bold;">Copyright &copy;2024 CarRental | Designed by <span> Info 3</span></p>
+    </footer>
+    <!-- partial -->
+  </div>
+  <!-- main-panel ends -->
 
-<!-- page-body-wrapper ends -->
+  <!-- page-body-wrapper ends -->

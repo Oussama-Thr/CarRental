@@ -8,6 +8,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign Up</title>
+    <style>
+        body {
+                height: 100vh;
+                overflow: visible;
+            }
+        .footer {
+            /* position: fixed; */
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #d1f2eb;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 
@@ -17,14 +33,6 @@
     <!-- HTML bootstrap design -->
     <div class="container">
         <!-- Heading of page -->
-        <style>
-            body {
-                height: 100vh;
-                /* Set the body height to 100% viewport height */
-                overflow: visible;
-                /* Hide the body's default scrollbar */
-            }
-        </style>
         <div class="content-wrapper">
             @if(session()->has('message'))
             <div class="alert alert-info">
@@ -32,8 +40,7 @@
             </div>
             @endif
 
-            <h1 class="text-center fw-bold" style="color: green; font-family: 'Montserrat', sans-serif;">SIGN UP AS USER
-            </h1>
+            <h1 class="text-center fw-bold mt-4" style="color: green; font-family: 'Montserrat', sans-serif;">SIGN UP AS USER</h1>
             <form action="{{url('/')}}/usersignup" method="post">
                 @csrf
                 @method('POST')
@@ -87,13 +94,18 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
         </script>
     </div>
-
-    <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">CarRental <br> Rent cars at your convenience</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Contact<br> Email: carrental@gmail.com <br> Phone: +212 600-000000 <br>Address: Private University of Marrakech, Marrakech, Morocco </span>
-        </div>
-    </footer>
+    <div class="footer">
+        <footer>
+            <div class="footer-content" style="color:black">
+                <h3>Contact</h3>
+                <p>
+                    N° Tél : +212 620-000000 <br />
+                    contact@carrental.com<br />
+                    Address: Private University of Marrakech, Marrakech, Morocco <br />
+                </p>
+                <p style="font-weight: bold;">Copyright &copy;2024 CarRental | Designed by <span> Info 3</span></p>
+        </footer>
+    </div>
 </body>
 
 </html>

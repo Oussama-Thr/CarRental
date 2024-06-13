@@ -4,7 +4,11 @@
 <head>
     <!-- Required meta tags -->
     @include('adminpanel.css')
-
+    <style>
+        .table-dark th, .table-dark td{
+            color: white !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,11 +24,9 @@
             <div class="content-wrapper">
 
                 @if(session()->has('message'))
-
                 <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                     {{session()->get('message')}}
-
                 </div>
 
                 @endif
@@ -32,8 +34,8 @@
                 <!-- TABLE-->
                 <h1 class="text-center text-white">CarRental vendors</h1>
                 <div class="table-responsive">
-                    <table class="table table-bordered mt-5">
-                        <thead class="bg-secondary text-light text-center">
+                    <table class="table table-dark table-striped table-bordered mt-5">
+                        <thead class="text-center">
                             <tr class="text-center">
                                 <th>ID</th>
                                 <th>Name</th>
@@ -46,8 +48,7 @@
                             </tr>
                         </thead>
 
-                        <tbody style="background-color: #eaf4f4; color: #333;">
-
+                        <tbody>
                             @foreach($vendor_data as $vendor_data)
                             <tr class='text-center'>
                                 <td>{{$vendor_data->id}}</td>
@@ -59,7 +60,6 @@
                                 <td>{{$vendor_data->email}}</td>
                                 <td><a onclick="return confirm('Confirm Delete?')" class="btn btn-danger" href="{{url('delete_f_vendor',$vendor_data->id)}}">Delete</a></td>
                             </tr>
-
                             @endforeach
                         </tbody>
 
@@ -69,6 +69,7 @@
         </div>
         <!-- container-scroller -->
         @include('adminpanel.script')
+    </div>
 </body>
 
 </html>

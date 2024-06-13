@@ -21,7 +21,7 @@
         {{session()->get('message')}}
       </div>
       @endif
-      <h1 class="text-center fw-bold" style="color: green; font-family: 'Montserrat', sans-serif;">ADMIN LOGIN</h1>
+      <h1 class="text-center fw-bold mt-4" style="color: green; font-family: 'Montserrat', sans-serif;">ADMIN LOGIN</h1>
       <form action="{{url('/')}}/adminlogin" method="post">
         @csrf
         @method('POST')

@@ -14,6 +14,17 @@
             height: 100vh;
             overflow: visible;
         }
+
+        .footer {
+            /* position: fixed; */
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #d1f2eb;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -30,7 +41,7 @@
             </div>
             @endif
 
-            <h1 class="text-center fw-bold" style="color: green; font-family: 'Montserrat', sans-serif;">SIGN UP AS ADMIN</h1>
+            <h1 class="text-center fw-bold mt-4" style="color: green; font-family: 'Montserrat', sans-serif;">SIGN UP AS ADMIN</h1>
             <form action="{{url('/')}}/adminsignup" method="post">
                 @csrf
                 @method('POST')
@@ -82,19 +93,27 @@
                 </div>
                 <!--Sign up button button-->
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary bg-success fw-bold">Sign Up as Admin</button>
+                    <button type="submit" class="btn btn-primary bg-success fw-bold mb-2">Sign Up as Admin</button>
                 </div>
             </form>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     </div>
 
-    <footer class="footer">
-        <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">CarRental <br> Rent cars at your convenience</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Contact<br> Email: contact@CarRental.com <br> Phone: +212 600-000000 <br>Address: Private University of Marrakech, Marrakech, Morocco </span>
-        </div>
-    </footer>
+
+    <div class="footer">
+        <footer>
+            <div class="footer-content" style="color:black">
+                <h3>Contact</h3>
+                <p>
+                    N° Tél : +212 620-000000 <br />
+                    contact@carrental.com<br />
+                    Address: Private University of Marrakech, Marrakech, Morocco <br />
+                </p>
+                <p style="font-weight: bold;">Copyright &copy;2024 CarRental | Designed by <span> Info 3</span></p>
+        </footer>
+    </div>
+
 </body>
 
 </html>

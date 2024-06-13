@@ -89,7 +89,7 @@
                         <div class="text">
                             <h2 class="mb-0"><a href="{{ url('product_details', $product->product_id) }}">{{ $product->product_title }}</a></h2>
                             <div class="d-flex mb-3">
-                                <span class="cat">{{ $product->category ? $product->category->category_name : 'No Category' }}</span>
+                                <span class="cat">{{ $product->catagory ? $product->catagory->catagory_name : 'No Category' }}</span>
                                 <p class="price ml-auto">Dh {{ $product->price }} <span>/day</span></p>
                             </div>
                             <form action="{{ url('add_cart', $product->product_id) }}" method='POST'>

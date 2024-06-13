@@ -85,7 +85,7 @@
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
-                    <h2 class="mb-0"> {{ $totalPrice }} TK </h2>
+                    <h2 class="mb-0"> {{ $totalPrice }} Dh </h2>
                   </div>
                   <h6 class="text-muted font-weight-normal">Total sales by {{session('vendor')}}</h6>
                 </div>
@@ -130,7 +130,7 @@
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
-                    <h2 class="mb-0">{{$earn}} TK</h2>
+                    <h2 class="mb-0">{{$earn}} Dh</h2>
                   </div>
                   <h6 class="text-muted font-weight-normal">After 10% commision on each rent</h6>
                 </div>
@@ -198,13 +198,28 @@
 
     <!-- content-wrapper ends -->
     <!-- partial:partials/_footer.html -->
-    <footer class="footer">
-      <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">CarRental <br> Info 3</span>
-
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Contact<br> Email: carrental@gmail.com <br> Phone: +212 600-000000 <br>Address: Private University of Marrakech, Marrakech, Morocco </span>
-      </div>
-    </footer>
+    <style>
+      .footer {
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+      }
+    </style>
+    <div class="footer">
+      <footer>
+        <div class="footer-content">
+          <h3>Contact</h3>
+          <p>
+            N° Tél : +212 620-000000 <br />
+            contact@carrental.com<br />
+            Address: Private University of Marrakech, Marrakech, Morocco <br />
+          </p>
+          <p style="font-weight: bold;">Copyright &copy;2024 CarRental | Designed by <span> Info 3</span></p>
+      </footer>
+    </div>
     <!-- partial -->
   </div>
   <!-- main-panel ends -->

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Vendorsignup extends Model
 {
     use HasFactory;
-    protected $table= "vendorsignups";
+    protected $table= "vendors";
     protected $primarykey="id";
 }

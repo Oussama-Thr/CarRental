@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Usersignup extends Model
+class Vendorsignup extends Model
 {
     use HasFactory;
-    protected $table= "usersignups";
+    protected $table= "vendors";
     protected $primarykey="id";
 }
